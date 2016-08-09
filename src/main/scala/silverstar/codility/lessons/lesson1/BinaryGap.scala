@@ -10,20 +10,13 @@ object BinaryGap {
   def binaryGap(number: Int): Int = {
 
     @tailrec
-    def iterate(charArray: List[Char], binaryGap: Int, maxBinaryGap: Int): Int = charArray match {
-      case Seq() => maxBinaryGap
-      case c1 :: tail => {
-        iterate(
-          charArray = tail,
-          binaryGap = if (c1 == '1') 0 else binaryGap + 1,
-          maxBinaryGap = if (c1 == '1') Math.max(binaryGap, maxBinaryGap) else maxBinaryGap
-        )
-      }
+    def iterate(chars: List[Char], binaryGap: Int, maxBinaryGap: Int): Int = chars match {
+      case List() => maxBinaryGap
+      case c1 :: tail if (c1 == '1') => iterate(tail, 0, Math.max(binaryGap, maxBinaryGap))
+      case c1 :: tail => iterate(tail, binaryGap + 1, maxBinaryGap)
     }
 
-    val binary: String = Integer.toBinaryString(number)
-    //println(s"binary=$binary")
-    iterate(binary.toCharArray.toList, 0, 0)
+    iterate(Integer.toBinaryString(number).toCharArray.toList, 0, 0)
   }
 
 }
