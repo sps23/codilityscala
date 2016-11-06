@@ -29,4 +29,11 @@ class DominatorSpec extends FunSpec with Matchers {
     }
   }
 
+  describe("dominatorSlow") {
+    for (t <- testData) {
+      it(s"should return '${t._2}' for a=${t._1.mkString(";")}") {
+        dominatorSlow(t._1) shouldBe t._2
+      }
+    }
+  }
 }
