@@ -9,7 +9,6 @@ class NumberOfDiscIntersectionsSpec extends FunSpec with Matchers {
   private val MinN = 0
   private val MaxN = 100000
   private val MinA = 0
-  private val MaxA = Integer.MAX_VALUE
 
   val testData: Seq[(Array[Int], Int)] = Seq(
     (Array(1, 5, 2, 1, 4, 0), 11),
@@ -21,7 +20,7 @@ class NumberOfDiscIntersectionsSpec extends FunSpec with Matchers {
     (Array(4, 3, 2, 1), 6),
     ((1 to MinN).toArray, 0),
     ((1 to MaxN).toArray, -1),
-    ((1 to MaxN).map(_ => MaxA).toArray, MaxN - 1)
+    ((1 to MaxN).map(_ => MAX).toArray, -1)
   )
 
   describe("numberOfIntersections") {

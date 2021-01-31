@@ -35,6 +35,7 @@ object MaxProductOfThree {
           case (Some(i), Some(j)) => Math.max(i, j)
           case (Some(i), None) => i
           case (None, Some(j)) => j
+          case _ => 1 // should never happen
         }
     }
   }
