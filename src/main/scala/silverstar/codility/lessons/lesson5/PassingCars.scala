@@ -10,13 +10,13 @@ object PassingCars {
 
     a.iterator
       .scanLeft((0, 0)) {
-        case ((_, nPassing), _) if nPassing > max => (0, -1)
-        case ((nEast, nPassing), 0)               => (nEast + 1, nPassing)
-        case ((nEast, nPassing), _)               => (nEast, nPassing + nEast)
+        case ((nEast, nPassing), 0) => (nEast + 1, nPassing)
+        case ((nEast, nPassing), _) => (nEast, nPassing + nEast)
       }
-      .takeWhile(_._2 > -1)
-      .map(_._2)
-      .foldLeft(0)((_, b) => b)
+      .takeWhile(t => t._2 <= max + t._1)
+      .foldLeft(0) {
+        case (_, (_, b)) => if (b > max) -1 else b
+      }
   }
 
   def numberOfPassingCarsSlow(a: Array[Int]): Int = {

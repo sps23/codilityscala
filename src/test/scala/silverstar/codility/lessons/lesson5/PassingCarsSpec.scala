@@ -8,8 +8,8 @@ class PassingCarsSpec extends AnyFunSpec with Matchers {
   import PassingCars._
 
   private val MaxN = 100000
-  private val > = 0
-  private val < = 1
+  private val >    = 0
+  private val <    = 1
 
   val testData: Seq[(Array[Int], Int)] = Seq(
     (Array(>, <, >, <, <), 5),
