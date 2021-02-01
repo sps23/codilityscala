@@ -1,14 +1,15 @@
 package silverstar.codility.lessons.lesson8
 
-import org.scalatest.{FunSpec, Matchers}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class DominatorSpec extends FunSpec with Matchers {
+class DominatorSpec extends AnyFunSpec with Matchers {
 
   import Dominator._
 
-  val MaxN = 100000
-  val MaxA = Integer.MAX_VALUE
-  val MinA = Integer.MIN_VALUE
+  private val MaxN = 100000
+  private val MaxA = Integer.MAX_VALUE
+  private val MinA = Integer.MIN_VALUE
 
   val testData: Seq[(Array[Int], Int)] = Seq(
     (Array(3, 4, 3, 2, 3, -1, 3, 3), 0),

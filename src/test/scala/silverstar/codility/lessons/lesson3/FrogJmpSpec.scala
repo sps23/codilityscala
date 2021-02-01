@@ -1,9 +1,9 @@
 package silverstar.codility.lessons.lesson3
 
-import org.scalatest.FunSpec
-import org.scalatest.Matchers._
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class FrogJmpSpec  extends FunSpec {
+class FrogJmpSpec extends AnyFunSpec with Matchers {
 
   describe("FrogJmp numberOfJumps") {
 
@@ -19,11 +19,15 @@ class FrogJmpSpec  extends FunSpec {
       FrogJmp.numberOfJumps(10, 20, 10) shouldBe 1
     }
 
-    it("returns 1,000,000,000 for start = 0; end = 1,000,000,000; jumpDistance = 1") {
+    it(
+      "returns 1,000,000,000 for start = 0; end = 1,000,000,000; jumpDistance = 1"
+    ) {
       FrogJmp.numberOfJumps(1, 1000000001, 1) shouldBe 1000000000
     }
 
-    it("returns 1,000 for start = 0; end = 1,000,000,000; jumpDistance = 1,000,000") {
+    it(
+      "returns 1,000 for start = 0; end = 1,000,000,000; jumpDistance = 1,000,000"
+    ) {
       FrogJmp.numberOfJumps(1, 1000000000, 1000000) shouldBe 1000
     }
   }

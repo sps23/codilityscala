@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson5
 
-import org.scalatest.{FunSpec, Matchers}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class CountDivSpec extends FunSpec with Matchers {
+class CountDivSpec extends AnyFunSpec with Matchers {
 
   import CountDiv._
 

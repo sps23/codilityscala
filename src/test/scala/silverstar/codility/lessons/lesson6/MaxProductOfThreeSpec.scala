@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson6
 
-import org.scalatest.{FunSpec, Matchers}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class MaxProductOfThreeSpec extends FunSpec with Matchers {
+class MaxProductOfThreeSpec extends AnyFunSpec with Matchers {
 
   import MaxProductOfThree._
 

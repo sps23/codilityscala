@@ -1,5 +1,7 @@
 package silverstar.codility.lessons.lesson5
 
+import scala.collection.parallel.CollectionConverters._
+
 object CountDiv {
 
   def numberOfDiv(a: Int, b: Int, k: Int): Int = (b / k) - (a / k) + {
@@ -7,8 +9,13 @@ object CountDiv {
   }
 
   def numberOfDivSeq(a: Int, b: Int, k: Int): Int =
-    (a to b).foldLeft(0)((nOfDiv, number) => if (number % k == 0) nOfDiv + 1 else nOfDiv)
+    (a to b).foldLeft(0)(
+      (nOfDiv, number) => if (number % k == 0) nOfDiv + 1 else nOfDiv
+    )
 
   def numberOfDivPar(a: Int, b: Int, k: Int): Int =
-    (a to b).par.aggregate(0)((nOfDiv, number) => if (number % k == 0) nOfDiv + 1 else nOfDiv, _ + _)
+    (a to b).par.aggregate(0)(
+      (nOfDiv, number) => if (number % k == 0) nOfDiv + 1 else nOfDiv,
+      _ + _
+    )
 }

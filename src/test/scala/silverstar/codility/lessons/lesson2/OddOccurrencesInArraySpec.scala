@@ -1,12 +1,12 @@
 package silverstar.codility.lessons.lesson2
 
-import org.scalatest.FunSpec
-import org.scalatest.Matchers._
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
 /**
   * Tests for OddOccurrencesInArray.
   */
-class OddOccurrencesInArraySpec extends FunSpec {
+class OddOccurrencesInArraySpec extends AnyFunSpec with Matchers {
 
   describe("OddOccurrencesInArray oddOccurrence") {
 
@@ -20,7 +20,8 @@ class OddOccurrencesInArraySpec extends FunSpec {
 
     it("returns correct result for big array with multiple repetitions") {
       val testArray = (1 to 10000).toArray
-      val array: Array[Int] = testArray ++ testArray ++ testArray ++ testArray ++ testArray ++ testArray :+ 1
+      val array
+        : Array[Int] = testArray ++ testArray ++ testArray ++ testArray ++ testArray ++ testArray :+ 1
       OddOccurrencesInArray.oddOccurrence(array) shouldBe 1
     }
 

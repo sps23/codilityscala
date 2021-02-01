@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson7
 
-import org.scalatest.{FunSpec, Matchers}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class NestingSpec extends FunSpec with Matchers {
+class NestingSpec extends AnyFunSpec with Matchers {
 
   import Nesting._
 

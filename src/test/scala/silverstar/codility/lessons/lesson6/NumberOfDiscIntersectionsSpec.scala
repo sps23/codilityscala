@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson6
 
-import org.scalatest.{Matchers, FunSpec}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class NumberOfDiscIntersectionsSpec extends FunSpec with Matchers {
+class NumberOfDiscIntersectionsSpec extends AnyFunSpec with Matchers {
 
   import NumberOfDiscIntersections._
 

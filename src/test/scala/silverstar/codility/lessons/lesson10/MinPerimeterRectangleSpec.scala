@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson10
 
-import org.scalatest.{FunSpec, Matchers}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class MinPerimeterRectangleSpec extends FunSpec with Matchers {
+class MinPerimeterRectangleSpec extends AnyFunSpec with Matchers {
 
   import MinPerimeterRectangle._
 

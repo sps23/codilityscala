@@ -1,10 +1,20 @@
 name := "CodilityScala"
 
-version := "1.0"
+version := "2.0"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.13.4"
+
+val scalacticVersion: String = "3.2.3"
 
 libraryDependencies ++= Seq(
-  "org.scalactic" %% "scalactic" % "3.0.0",
-  "org.scalatest" %% "scalatest" % "3.0.0" % "test"
+  "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.0",
+  "org.scalactic" %% "scalactic" % scalacticVersion,
+  "org.scalatest" %% "scalatest" % scalacticVersion % "test"
 )
+
+addCompilerPlugin(
+  "org.wartremover" %% "wartremover" % "2.4.13" cross CrossVersion.full
+)
+//wartremoverWarnings ++= Warts.unsafe
+
+scalacOptions ++= Seq("-deprecation", "-Xlint")

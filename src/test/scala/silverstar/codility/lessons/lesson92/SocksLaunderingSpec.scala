@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson92
 
-import org.scalatest.{FunSpec, Matchers}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class SocksLaunderingSpec extends FunSpec with Matchers {
+class SocksLaunderingSpec extends AnyFunSpec with Matchers {
 
   import SocksLaundering._
 
@@ -25,7 +26,8 @@ class SocksLaunderingSpec extends FunSpec with Matchers {
 
   describe("maxNumberOfPairs") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for (k=${t._1._1}, c=[${t._1._2.mkString(";")}], d=[${t._1._3.mkString(";")}])") {
+      it(s"should return '${t._2}' for (k=${t._1._1}, c=[${t._1._2
+        .mkString(";")}], d=[${t._1._3.mkString(";")}])") {
         maxNumberOfPairs(t._1._1, t._1._2, t._1._3) shouldBe t._2
       }
     }

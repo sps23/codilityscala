@@ -1,16 +1,16 @@
 package silverstar.codility.lessons.lesson4
 
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-import org.scalatest.{FunSpec, Matchers}
-
-class FrogRiverOneSpec extends FunSpec with Matchers {
+class FrogRiverOneSpec extends AnyFunSpec with Matchers {
 
   import FrogRiverOne._
 
-  val MaxN = 100000
-  val MinN = 1
-  val MaxX = MaxN
-  val MinX = MinN
+  private val MaxN = 100000
+  private val MinN = 1
+  private val MaxX = MaxN
+  private val MinX = MinN
 
   val testData: Seq[((Int, Array[Int]), Int)] = Seq(
     ((5, Array(1, 3, 1, 4, 2, 3, 5, 4)), 6),

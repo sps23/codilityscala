@@ -2,15 +2,16 @@ package silverstar.codility.lessons.lesson4
 
 import java.util
 
-import org.scalatest.{FunSpec, Matchers}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class MissingIntegerSpec extends FunSpec with Matchers {
+class MissingIntegerSpec extends AnyFunSpec with Matchers {
 
   import MissingInteger._
 
-  val MaxN = 100000
-  val MinA = Integer.MIN_VALUE
-  val MaxA = Integer.MAX_VALUE
+  private val MaxN = 100000
+  private val MinA = Integer.MIN_VALUE
+  private val MaxA = Integer.MAX_VALUE
 
   val testData: Seq[(Array[Int], Int)] = Seq(
     (Array(1, 3, 6, 4, 1, 2), 5),

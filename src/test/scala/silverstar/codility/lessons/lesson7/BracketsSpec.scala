@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson7
 
-import org.scalatest.{Matchers, FunSpec}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class BracketsSpec extends FunSpec with Matchers {
+class BracketsSpec extends AnyFunSpec with Matchers {
 
   import Brackets._
 

@@ -1,9 +1,9 @@
 package silverstar.codility.lessons.lesson3
 
-import org.scalatest.FunSpec
-import org.scalatest.Matchers._
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class TapeEquilibriumSpec extends FunSpec {
+class TapeEquilibriumSpec extends AnyFunSpec with Matchers {
 
   describe("TapeEquilibrium minimalDifference") {
 
@@ -20,7 +20,7 @@ class TapeEquilibriumSpec extends FunSpec {
     }
 
     it("returns 0 for big array with same elements") {
-      val array: Array[Int] = (1 to 100000).map(e => 3).toArray
+      val array: Array[Int] = (1 to 100000).map(_ => 3).toArray
       TapeEquilibrium.minimalDifference(array) shouldBe 0
     }
   }

@@ -5,12 +5,8 @@ import scala.annotation.tailrec
 object MissingInteger {
 
   def missingIntegerIter(a: Array[Int]): Int = {
-
     val aSet = a.toSet
-    for (i <- 1 to Integer.MAX_VALUE) {
-      if (!aSet.contains(i)) return i
-    }
-    -1
+    (1 to Integer.MAX_VALUE).find(!aSet.contains(_)).getOrElse(-1)
   }
 
   def missingIntegerRec(a: Array[Int]): Int = {

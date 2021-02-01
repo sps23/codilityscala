@@ -10,8 +10,7 @@ object Dominator {
     def iterate(index: Int, occurrences: Map[Int, Array[Int]]): Map[Int, Array[Int]] = {
       if (index < a.length) {
         val aVal = a(index)
-        iterate(index + 1, occurrences + occurrences.get(aVal).fold(
-          aVal -> Array(index))(aa => aVal -> (aa :+ index)))
+        iterate(index + 1, occurrences + occurrences.get(aVal).fold(aVal -> Array(index))(aa => aVal -> (aa :+ index)))
       } else occurrences
     }
 
@@ -20,10 +19,12 @@ object Dominator {
 
   def dominator(a: Array[Int]): Int = {
 
-    def aMapped: Map[Int, (Int, Int)] = a.zipWithIndex.foldLeft(Map[Int, (Int, Int)]())((occurrences, tuple) => {
-      val (value, index) = tuple
-      occurrences + occurrences.get(value).fold(value -> (index, 1))(aa => value -> (aa._1, aa._2 + 1))
-    })
+    def aMapped: Map[Int, (Int, Int)] =
+      a.zipWithIndex.foldLeft(Map[Int, (Int, Int)]())((occurrences, tuple) => {
+        val (value, index)       = tuple
+        val newValue: (Int, Int) = occurrences.get(value).fold((index, 1))(aa => (aa._1, aa._2 + 1))
+        occurrences + (value -> newValue)
+      })
 
     aMapped.filter(_._2._2 > a.length / 2).map(_._2._1).headOption.getOrElse(-1)
   }

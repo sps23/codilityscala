@@ -22,12 +22,11 @@ object StoneWall {
   def numberOfBlocksInWallIter(h: Array[Int]): Int = {
 
     var counter: Int = 0
-    val stack = new mutable.Stack[Int]()
+    val stack        = new mutable.Stack[Int]()
 
     for (i <- h.indices) {
-      while (stack.nonEmpty && h(i) < stack.head) stack.pop
-      if (stack.nonEmpty && h(i) == stack.head) {}
-      else {
+      while (stack.nonEmpty && h(i) < stack.head) stack.pop()
+      if (stack.nonEmpty && h(i) == stack.head) {} else {
         stack.push(h(i))
         counter += 1
       }

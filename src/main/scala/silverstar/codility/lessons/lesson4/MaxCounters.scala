@@ -13,7 +13,7 @@ object MaxCounters {
           counters(a(i) - 1) = counters(a(i) - 1) + 1
           Math.max(counters(a(i) - 1), max)
         } else {
-          counters.transform(_ => max)
+          counters.mapInPlace(_ => max)
           max
         }
         iterate(newMax, i + 1, counters)

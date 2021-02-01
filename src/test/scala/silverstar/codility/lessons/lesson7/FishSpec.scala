@@ -1,8 +1,9 @@
 package silverstar.codility.lessons.lesson7
 
-import org.scalatest.{Matchers, FunSpec}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class FishSpec extends FunSpec with Matchers {
+class FishSpec extends AnyFunSpec with Matchers {
 
   import Fish._
 
@@ -17,7 +18,9 @@ class FishSpec extends FunSpec with Matchers {
 
   describe("numberOfFishAlive") {
     for (t <- testData) {
-      it(s"should return ${t._2} for {(${t._1._1.mkString(";")}) (${t._1._2.mkString(";")})}") {
+      it(
+        s"should return ${t._2} for {(${t._1._1.mkString(";")}) (${t._1._2.mkString(";")})}"
+      ) {
         numberOfFishAlive(t._1._1, t._1._2) shouldBe t._2
       }
     }

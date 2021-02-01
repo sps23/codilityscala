@@ -1,12 +1,12 @@
 package silverstar.codility.lessons.lesson1
 
-import org.scalatest.FunSpec
-import org.scalatest.Matchers._
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
 /**
   * Tests for BinaryGap.
   */
-class BinaryGapSpec extends FunSpec {
+class BinaryGapSpec extends AnyFunSpec with Matchers {
 
   describe("BinaryGap binaryGap") {
 
