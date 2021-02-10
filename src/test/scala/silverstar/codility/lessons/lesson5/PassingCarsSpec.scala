@@ -26,7 +26,7 @@ class PassingCarsSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfPassingCars") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for '${t._1.mkString}'")(
+      it(s"should return '${t._2}' for '${t._1.take(10).mkString}'")(
         numberOfPassingCars(t._1) shouldBe t._2
       )
     }
@@ -34,7 +34,7 @@ class PassingCarsSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfPassingCarsSlow") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for '${t._1.mkString}'")(
+      it(s"should return '${t._2}' for '${t._1.take(10).mkString}'")(
         numberOfPassingCarsSlow(t._1) shouldBe t._2
       )
     }

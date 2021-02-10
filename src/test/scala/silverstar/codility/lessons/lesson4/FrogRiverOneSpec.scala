@@ -22,7 +22,7 @@ class FrogRiverOneSpec extends AnyFunSpec with Matchers {
 
   describe("whenFrogCanJump") {
     for (t <- testData) {
-      it(s"should return ${t._2} for (${t._1._1}; [${t._1._2.mkString(";")}])") {
+      it(s"should return ${t._2} for (${t._1._1}; [${t._1._2.take(10).mkString(";")}])") {
         whenFrogCanJump(t._1._1, t._1._2) shouldBe t._2
       }
     }
