@@ -12,7 +12,7 @@ object StoneWall {
       case List() => nBlocks
       case head :: tail =>
         val newMins: List[Int] = mins.dropWhile(head < _)
-        if (newMins.nonEmpty && head == newMins.head) iterate(tail, newMins, nBlocks)
+        if (newMins.headOption.fold(false)(_ == head)) iterate(tail, newMins, nBlocks)
         else iterate(tail, head :: newMins, nBlocks + 1)
     }
 
@@ -25,8 +25,8 @@ object StoneWall {
     val stack        = new mutable.Stack[Int]()
 
     for (i <- h.indices) {
-      while (stack.nonEmpty && h(i) < stack.head) stack.pop()
-      if (stack.nonEmpty && h(i) == stack.head) {} else {
+      while (stack.headOption.fold(false)(_ > h(i))) stack.pop()
+      if (stack.headOption.fold(false)(_ == h(i))) {} else {
         stack.push(h(i))
         counter += 1
       }

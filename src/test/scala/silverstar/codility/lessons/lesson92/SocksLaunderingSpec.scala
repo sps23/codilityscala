@@ -26,7 +26,7 @@ class SocksLaunderingSpec extends AnyFunSpec with Matchers {
 
   describe("maxNumberOfPairs") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for (k=${t._1._1}, c=[${t._1._2
+      it(s"should return '${t._2.toString}' for (k=${t._1._1.toString}, c=[${t._1._2
         .mkString(";")}], d=[${t._1._3.mkString(";")}])") {
         maxNumberOfPairs(t._1._1, t._1._2, t._1._3) shouldBe t._2
       }

@@ -24,7 +24,7 @@ class CountFactorsSpec extends AnyFunSpec with Matchers {
   describe("CountFactors - complexity O(n)") {
     describe("numberOfFactorsSlow") {
       for (t <- testData) {
-        it(s"should return '${t._2}' for ${t._1}") {
+        it(s"should return '${t._2.toString}' for ${t._1.toString}") {
           numberOfFactorsSlow(t._1) shouldBe t._2
         }
       }
@@ -32,7 +32,7 @@ class CountFactorsSpec extends AnyFunSpec with Matchers {
 
     describe("factorsSlow") {
       for (t <- testData) {
-        it(s"should return '${t._3.mkString("[", "; ", "]")}' for ${t._1}") {
+        it(s"should return '${t._3.mkString("[", "; ", "]")}' for ${t._1.toString}") {
           factorsSlow(t._1) shouldBe t._3
         }
       }

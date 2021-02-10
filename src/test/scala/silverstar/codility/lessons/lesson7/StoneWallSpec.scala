@@ -23,7 +23,7 @@ class StoneWallSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfBlocksInWall") {
     for (t <- testData) {
-      it(s"should return ${t._2} for [${t._1.take(10).mkString(";")}]") {
+      it(s"should return ${t._2.toString} for [${t._1.take(10).mkString(";")}]") {
         numberOfBlocksInWall(t._1) shouldBe t._2
       }
     }
@@ -31,7 +31,7 @@ class StoneWallSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfBlocksInWallIter") {
     for (t <- testData) {
-      it(s"should return ${t._2} for [${t._1.take(10).mkString(";")}]") {
+      it(s"should return ${t._2.toString} for [${t._1.take(10).mkString(";")}]") {
         numberOfBlocksInWallIter(t._1) shouldBe t._2
       }
     }

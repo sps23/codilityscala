@@ -24,7 +24,7 @@ class DominatorSpec extends AnyFunSpec with Matchers {
 
   describe("dominator") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for a=${t._1.take(10).mkString("[", ";", "]")}") {
+      it(s"should return '${t._2.toString}' for a=${t._1.take(10).mkString(";")}") {
         dominator(t._1) shouldBe t._2
       }
     }
@@ -32,7 +32,7 @@ class DominatorSpec extends AnyFunSpec with Matchers {
 
   describe("dominatorSlow") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for a=${t._1.take(10).mkString(";")}") {
+      it(s"should return '${t._2.toString}' for a=${t._1.take(10).mkString(";")}") {
         dominatorSlow(t._1) shouldBe t._2
       }
     }

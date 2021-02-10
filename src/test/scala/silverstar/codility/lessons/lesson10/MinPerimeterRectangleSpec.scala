@@ -20,7 +20,7 @@ class MinPerimeterRectangleSpec extends AnyFunSpec with Matchers {
 
   describe("minPerimeter") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for ${t._1}") {
+      it(s"should return '${t._2.toString}' for ${t._1.toString}") {
         minPerimeter(t._1) shouldBe t._2
       }
     }
@@ -28,7 +28,7 @@ class MinPerimeterRectangleSpec extends AnyFunSpec with Matchers {
 
   describe("minPerimeterSlow") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for ${t._1}") {
+      it(s"should return '${t._2.toString}' for ${t._1.toString}") {
         minPerimeterSlow(t._1) shouldBe t._2
       }
     }
@@ -36,7 +36,7 @@ class MinPerimeterRectangleSpec extends AnyFunSpec with Matchers {
 
   describe("minPerimeterFold") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for ${t._1}") {
+      it(s"should return '${t._2.toString}' for ${t._1.toString}") {
         minPerimeterFold(t._1) shouldBe t._2
       }
     }

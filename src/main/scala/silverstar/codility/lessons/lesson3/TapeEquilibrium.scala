@@ -8,6 +8,6 @@ object TapeEquilibrium {
 
     val splitPointDifference: Array[Int] =
       sumFromLeft.init.lazyZip(sumFromRight.tail).map((sL, sR) => Math.abs(sL - sR))
-    splitPointDifference.min
+    splitPointDifference.minOption.getOrElse(0)
   }
 }

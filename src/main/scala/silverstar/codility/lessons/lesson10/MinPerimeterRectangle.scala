@@ -1,6 +1,7 @@
 package silverstar.codility.lessons.lesson10
 
 import scala.annotation.tailrec
+import scala.language.postfixOps
 
 object MinPerimeterRectangle {
 
@@ -32,7 +33,7 @@ object MinPerimeterRectangle {
     }
 
     val s: Seq[(Int, Int)] = allSides(1, Seq())
-    perimeter(s.head._1, s.head._2)
+    s.headOption.fold(-1)(perimeter _ tupled)
   }
 
   def minPerimeterFold(n: Int): Int = {
