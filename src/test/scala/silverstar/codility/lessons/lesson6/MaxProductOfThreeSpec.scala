@@ -27,7 +27,7 @@ class MaxProductOfThreeSpec extends AnyFunSpec with Matchers {
 
   describe("maxProductTriplet") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for ${t._1.take(10).mkString("[", ";", "]")}") {
+      it(s"should return '${t._2.toString}' for ${t._1.take(10).mkString("[", ";", "]")}") {
         maxProductTriplet(t._1) shouldBe t._2
       }
     }

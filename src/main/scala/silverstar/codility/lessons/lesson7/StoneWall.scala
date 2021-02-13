@@ -3,6 +3,7 @@ package silverstar.codility.lessons.lesson7
 import scala.annotation.tailrec
 import scala.collection.mutable
 
+@SuppressWarnings(Array("org.wartremover.warts.NonUnitStatements", "org.wartremover.warts.Var"))
 object StoneWall {
 
   def numberOfBlocksInWall(h: Array[Int]): Int = {

@@ -18,7 +18,7 @@ class BracketsSpec extends AnyFunSpec with Matchers {
 
   describe("isProperlyNested") {
     for (t <- testData) {
-      it(s"should return ${t._2} for ${t._1.take(10)}") {
+      it(s"should return ${t._2.toString} for ${t._1.take(10)}") {
         isProperlyNested(t._1) shouldBe t._2
       }
     }

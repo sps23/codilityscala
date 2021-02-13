@@ -19,7 +19,7 @@ class FishSpec extends AnyFunSpec with Matchers {
   describe("numberOfFishAlive") {
     for (t <- testData) {
       it(
-        s"should return ${t._2} for {(${t._1._1.mkString(";")}) (${t._1._2.mkString(";")})}"
+        s"should return ${t._2.toString} for {(${t._1._1.mkString(";")}) (${t._1._2.mkString(";")})}"
       ) {
         numberOfFishAlive(t._1._1, t._1._2) shouldBe t._2
       }

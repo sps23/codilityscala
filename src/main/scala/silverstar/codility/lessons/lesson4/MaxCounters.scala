@@ -2,6 +2,7 @@ package silverstar.codility.lessons.lesson4
 
 import scala.annotation.tailrec
 
+@SuppressWarnings(Array("org.wartremover.warts.NonUnitStatements"))
 object MaxCounters {
 
   def calculateCountersSlow(n: Int, a: Array[Int]): Array[Int] = {

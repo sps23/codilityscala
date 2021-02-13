@@ -30,7 +30,7 @@ class CountDivSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfDiv") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for '${t._1}'") {
+      it(s"should return '${t._2.toString}' for '${t._1.toString}'") {
         numberOfDiv(t._1._1, t._1._2, t._1._3) shouldBe t._2
       }
     }
@@ -38,7 +38,7 @@ class CountDivSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfDivSeq") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for '${t._1}'") {
+      it(s"should return '${t._2.toString}' for '${t._1.toString}'") {
         numberOfDivSeq(t._1._1, t._1._2, t._1._3) shouldBe t._2
       }
     }
@@ -46,7 +46,7 @@ class CountDivSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfDivPar") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for '${t._1}'") {
+      it(s"should return '${t._2.toString}' for '${t._1.toString}'") {
         numberOfDivPar(t._1._1, t._1._2, t._1._3) shouldBe t._2
       }
     }

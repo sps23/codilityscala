@@ -23,7 +23,7 @@ class MissingIntegerSpec extends AnyFunSpec with Matchers {
 
   describe("missingIntegerIter") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for '${util.Arrays.toString(t._1.take(10))}'") {
+      it(s"should return '${t._2.toString}' for '${util.Arrays.toString(t._1.take(10))}'") {
         missingIntegerIter(t._1) shouldBe t._2
       }
     }
@@ -31,7 +31,7 @@ class MissingIntegerSpec extends AnyFunSpec with Matchers {
 
   describe("missingIntegerRec") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for '${util.Arrays.toString(t._1.take(10))}'") {
+      it(s"should return '${t._2.toString}' for '${util.Arrays.toString(t._1.take(10))}'") {
         missingIntegerRec(t._1) shouldBe t._2
       }
     }

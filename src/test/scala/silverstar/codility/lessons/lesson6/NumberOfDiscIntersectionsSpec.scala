@@ -26,7 +26,7 @@ class NumberOfDiscIntersectionsSpec extends AnyFunSpec with Matchers {
 
   describe("numberOfIntersections") {
     for (t <- testData) {
-      it(s"should return '${t._2}' for ${t._1.take(10).mkString("[", ";", "]")}") {
+      it(s"should return '${t._2.toString}' for ${t._1.take(10).mkString("[", ";", "]")}") {
         numberOfIntersections(t._1) shouldBe t._2
       }
     }

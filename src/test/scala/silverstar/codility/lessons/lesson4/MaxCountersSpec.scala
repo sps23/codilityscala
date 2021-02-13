@@ -29,7 +29,7 @@ class MaxCountersSpec extends AnyFunSpec with Matchers {
     for (t <- testData) {
       it(
         s"should return [${t._2.take(10).mkString(";")}] for " +
-          s"(${t._1._1}; [${t._1._2.take(10).mkString(";")}])") {
+          s"(${t._1._1.toString}; [${t._1._2.take(10).mkString(";")}])") {
         calculateCounters(t._1._1, t._1._2) shouldBe t._2
       }
     }
@@ -39,7 +39,7 @@ class MaxCountersSpec extends AnyFunSpec with Matchers {
     for (t <- testData) {
       it(
         s"should return [${t._2.take(10).mkString(";")}] for " +
-          s"(${t._1._1}; [${t._1._2.take(10).mkString(";")}])"
+          s"(${t._1._1.toString}; [${t._1._2.take(10).mkString(";")}])"
       ) {
         calculateCountersSlow(t._1._1, t._1._2) shouldBe t._2
       }
